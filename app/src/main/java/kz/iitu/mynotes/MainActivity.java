@@ -25,7 +25,7 @@ import java.util.HashSet;
 public class MainActivity extends AppCompatActivity {
 
     static ArrayList<String> notes = new ArrayList<>();
-    static ArrayAdapter arrayAdapter;
+    static ArrayAdapter<String> arrayAdapter;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                                 SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("kz.iitu.mynotes", Context.MODE_PRIVATE);
-                                HashSet<String> set = new HashSet(MainActivity.notes);
+                                HashSet<String> set = new HashSet<>(MainActivity.notes);
                                 sharedPreferences.edit().putStringSet("notes", set).apply();
                             }
                         }).setNegativeButton("No", null).show();
