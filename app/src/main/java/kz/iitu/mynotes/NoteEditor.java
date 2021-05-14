@@ -19,12 +19,12 @@ public class NoteEditor extends AppCompatActivity {
 
     int noteId;
 
-    public void onClickNoteSave(View view){
+    public void onClickNoteSave(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 
-    public void onClickNoteDelete(View view){
+    public void onClickNoteDelete(View view) {
         new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Are you sure?")
@@ -54,7 +54,7 @@ public class NoteEditor extends AppCompatActivity {
         EditText editText = (EditText) findViewById(R.id.editTextTextMultiLine);
         Intent intent = getIntent();
         noteId = intent.getIntExtra("noteId", -1);
-        if (noteId != -1){
+        if (noteId != -1) {
             editText.setText(MainActivity.notes.get(noteId));
         } else {
             MainActivity.notes.add("");
@@ -64,7 +64,6 @@ public class NoteEditor extends AppCompatActivity {
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
@@ -79,7 +78,6 @@ public class NoteEditor extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-
             }
         });
     }
