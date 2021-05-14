@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                                 SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("kz.iitu.mynotes", Context.MODE_PRIVATE);
                                 HashSet<String> set = new HashSet<>(MainActivity.notes);
                                 sharedPreferences.edit().putStringSet("notes", set).apply();
+                                // /data/data/kz.iitu.mynotes/shared_prefs/notes.xml
                             }
                         }).setNegativeButton("No", null).show();
                 return true;
